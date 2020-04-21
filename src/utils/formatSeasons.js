@@ -4,8 +4,10 @@ export const formatSeasons = allEpisodes => {
     if (!seasons.hasOwnProperty(`Season ${e.season}`)) {
       seasons[`Season ${e.season}`] = [];
     }
+    console.log('the season number', e.season); 
     seasons[`Season ${e.season}`].push(e);
   });
   console.log(seasons);
+  
   return seasons;
 };
