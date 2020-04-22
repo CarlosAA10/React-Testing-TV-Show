@@ -28,9 +28,9 @@ export default function App() {
     // };
     fetchShow()
       .then(res => {
-        console.log('this is res in app.js', res)
-        setShow(res.data); 
-        setSeasons(formatSeasons(res.data._embedded.episodes)); 
+        console.log('this is res.data in app.js', res.data)
+        setShow(res); 
+        setSeasons(formatSeasons(res._embedded.episodes)); 
     })
       .catch(err => console.log('this is err in app.js', err))
   }, []);
@@ -53,6 +53,7 @@ export default function App() {
         options={Object.keys(seasons)}
         onChange={handleSelect}
         value={selectedSeason || "Select a season"}
+        data-testid="drop-down"
         placeholder="Select an option"
       />
       <Episodes episodes={episodes} />

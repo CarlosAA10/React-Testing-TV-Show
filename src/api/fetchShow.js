@@ -9,7 +9,7 @@ export const fetchShow = () => {
       )
       .then(res => {
         console.log('this is res', res.data)
-        return res; 
+        return res.data; 
       })
       .catch( err => {
           console.error('Error in fetching data from api', err); 
